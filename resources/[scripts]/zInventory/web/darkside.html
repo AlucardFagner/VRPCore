@@ -1,0 +1,292 @@
+<html>
+	<head>
+		<meta charset='UTF-8'>
+		<title>zInventory</title>
+		<script src='nui://game/ui/jquery.js' type='text/javascript'></script>
+		<script src='http://code.jquery.com/ui/1.12.1/jquery-ui.min.js'></script>
+		<link rel='preconnect' href='http://fonts.gstatic.com'>
+        <link href='http://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap' rel='stylesheet'>
+		<link href='http://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap' rel='stylesheet'>
+
+		<link href='theforce.css' rel='stylesheet' type='text/css'/>
+	</head>
+	<body>
+		<div id='hotbar'>
+			<div id='hotbar-items'></div>
+		</div>
+		
+		<div id='actionmenu'>
+			<div class='popup' id='popup-1'>
+				<div class='content'>
+					<input class='amount' type='number' placeholder='QUANTIDADE'/>
+					<button type='button' class='btn' onclick='fecharModal()'>CANCELAR</button>
+					<button type='button' class='btn' onclick='simAceita()'>CONFIRMAR</button>
+				</div>
+			</div>
+
+			<div id='inventory'>
+				<div class='info-left'>
+					<div class='info-left-icon'><img src='assets/backpack.png'></div>
+					<div class='info-left-text'>
+						<div class='info-left-title'>INVENTÁRIO</div>
+						<div class='info-left-description'>A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado.</div>
+					</div>
+				</div>
+				<div class='info-weight'></div>
+				<div id='inventory-items'></div>
+				<div class='keys'>
+					<div class='key'>
+						<div class='imput'>DELETE</div>
+						<div class='key-info'>Dropar item</div>
+					</div>
+					<div class='key'>
+						<div class='imput'>S</div>
+						<div class='key-info'>Enviar item</div>
+					</div>
+					<div class='key'>
+						<div class='imput'>G</div>
+						<div class='key-info'>Desequipar mochila</div>
+					</div>
+					<div class='key'>
+						<div class='imput-img'><img src='assets/right-click.png'></div>
+						<div class='key-info'>Usar item</div>
+					</div>
+				</div>
+			</div>
+
+			<div id='droped'>
+				<div class='info-left'>
+					<div class='info-left-icon'><img src='assets/backpack.png'></div>
+					<div class='info-left-text'>
+						<div class='info-left-title'>INVENTÁRIO</div>
+						<div class='info-left-description'>A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado.</div>
+					</div>
+				</div>
+				<div class='info-right'>
+					<div class='info-right-icon'><img src='assets/backpack.png'></div>
+					<div class='info-right-text'>
+						<div class='info-right-title'>CHÃO</div>
+						<div class='info-right-description'>A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado.</div>
+					</div>
+				</div>
+				<div class='info-weight'></div>
+				<div id='droped-items'></div>
+				<div id='droped-drops'></div>
+				<div class='keys'>
+					<div class='key'>
+						<div class='imput'>DELETE</div>
+						<div class='key-info'>Dropar item</div>
+					</div>
+					<div class='key'>
+						<div class='imput'>S</div>
+						<div class='key-info'>Enviar item</div>
+					</div>
+					<div class='key'>
+						<div class='imput'>G</div>
+						<div class='key-info'>Desequipar mochila</div>
+					</div>
+					<div class='key'>
+						<div class='imput-img'><img src='assets/right-click.png'></div>
+						<div class='key-info'>Usar item</div>
+					</div>
+				</div>
+			</div>
+
+			<div id='sends'>
+				<div class='info-left'>
+					<div class='info-left-icon'><img src='assets/backpack.png'></div>
+					<div class='info-left-text'>
+						<div class='info-left-title'>INVENTÁRIO</div>
+						<div class='info-left-description'>A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado.</div>
+					</div>
+				</div>
+				<div class='info-right'>
+					<div class='info-right-icon'><img src='assets/backpack.png'></div>
+					<div class='info-right-text'>
+						<div class='info-right-title'>ENVIAR</div>
+						<div class='info-right-description'>A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado.</div>
+					</div>
+				</div>
+				<div id='sends-items'></div>
+				<div id='sends-send'></div>
+				<div class='keys'>
+					<div class='key'>
+						<div class='imput'>DELETE</div>
+						<div class='key-info'>Dropar item</div>
+					</div>
+					<div class='key'>
+						<div class='imput'>S</div>
+						<div class='key-info'>Enviar item</div>
+					</div>
+					<div class='key'>
+						<div class='imput'>G</div>
+						<div class='key-info'>Desequipar mochila</div>
+					</div>
+					<div class='key'>
+						<div class='imput-img'><img src='assets/right-click.png'></div>
+						<div class='key-info'>Usar item</div>
+					</div>
+				</div>
+			</div>
+
+			<div id='chest'>
+				<div class='info-left'>
+					<div class='info-left-icon'><img src='assets/backpack.png'></div>
+					<div class='info-left-text'>
+						<div class='info-left-title'>INVENTÁRIO</div>
+						<div class='info-left-description'>A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado.</div>
+					</div>
+				</div>
+				<div class='info-right'>
+					<div class='info-right-icon'><img src='assets/backpack.png'></div>
+					<div class='info-right-text'>
+						<div class='info-right-title'>BAÚ</div>
+						<div class='info-right-description'>A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado.</div>
+					</div>
+				</div>
+				<div class='info-weight'></div>
+				<div id='chest-personal-items'></div>
+				<div id='chest-items'></div>
+				<div class='keys'>
+					<div class='key'>
+						<div class='imput'>DELETE</div>
+						<div class='key-info'>Dropar item</div>
+					</div>
+					<div class='key'>
+						<div class='imput'>S</div>
+						<div class='key-info'>Enviar item</div>
+					</div>
+					<div class='key'>
+						<div class='imput'>G</div>
+						<div class='key-info'>Desequipar mochila</div>
+					</div>
+					<div class='key'>
+						<div class='imput-img'><img src='assets/right-click.png'></div>
+						<div class='key-info'>Usar item</div>
+					</div>
+				</div>
+			</div>
+
+			<div id='trunkchest'>
+				<div class='info-left'>
+					<div class='info-left-icon'><img src='assets/backpack.png'></div>
+					<div class='info-left-text'>
+						<div class='info-left-title'>INVENTÁRIO</div>
+						<div class='info-left-description'>A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado.</div>
+					</div>
+				</div>
+				<div class='info-right'>
+					<div class='info-right-icon'><img src='assets/backpack.png'></div>
+					<div class='info-right-text'>
+						<div class='info-right-title'>PORTA-MALAS</div>
+						<div class='info-right-description'>A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado.</div>
+					</div>
+				</div>
+
+				<div class='info-weight'></div>
+				
+				<div id='trunkchest-personal-items'></div>
+				<div id='trunkchest-items'></div>
+				
+				<div class='keys'>
+					<div class='key'>
+						<div class='imput'>DELETE</div>
+						<div class='key-info'>Dropar item</div>
+					</div>
+					<div class='key'>
+						<div class='imput'>S</div>
+						<div class='key-info'>Enviar item</div>
+					</div>
+					<div class='key'>
+						<div class='imput'>G</div>
+						<div class='key-info'>Desequipar mochila</div>
+					</div>
+					<div class='key'>
+						<div class='imput-img'><img src='assets/right-click.png'></div>
+						<div class='key-info'>Usar item</div>
+					</div>
+				</div>
+			</div>
+
+			<div id='inspect'>
+				<div class='info-left'>
+					<div class='info-left-icon'><img src='assets/backpack.png'></div>
+					<div class='info-left-text'>
+						<div class='info-left-title'>INVENTÁRIO</div>
+						<div class='info-left-description'>A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado.</div>
+					</div>
+				</div>
+				<div class='info-right'>
+					<div class='info-right-icon'><img src='assets/backpack.png'></div>
+					<div class='info-right-text'>
+						<div class='info-right-title'>REVISTANDO</div>
+						<div class='info-right-description'>A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado.</div>
+					</div>
+				</div>
+
+				<div class='info-weight'></div>
+				
+				<div id='inspect-personal-items'></div>
+				<div id='inspect-items'></div>
+				
+				<div class='keys'>
+					<div class='key'>
+						<div class='imput'>DELETE</div>
+						<div class='key-info'>Dropar item</div>
+					</div>
+					<div class='key'>
+						<div class='imput'>S</div>
+						<div class='key-info'>Enviar item</div>
+					</div>
+					<div class='key'>
+						<div class='imput'>G</div>
+						<div class='key-info'>Desequipar mochila</div>
+					</div>
+					<div class='key'>
+						<div class='imput-img'><img src='assets/right-click.png'></div>
+						<div class='key-info'>Usar item</div>
+					</div>
+				</div>
+			</div>
+
+			<div id='chesthome'>
+				<div class='info-left'>
+					<div class='info-left-icon'><img src='assets/backpack.png'></div>
+					<div class='info-left-text'>
+						<div class='info-left-title'>INVENTÁRIO</div>
+						<div class='info-left-description'>A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado.</div>
+					</div>
+				</div>
+				<div class='info-right'>
+					<div class='info-right-icon'><img src='assets/backpack.png'></div>
+					<div class='info-right-text'>
+						<div class='info-right-title'>BAÚ</div>
+						<div class='info-right-description'>A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado.</div>
+					</div>
+				</div>
+				<div class='info-weight'></div>
+				<div id='chesthome-personal-items'></div>
+				<div id='chesthome-items'></div>
+				<div class='keys'>
+					<div class='key'>
+						<div class='imput'>DELETE</div>
+						<div class='key-info'>Dropar item</div>
+					</div>
+					<div class='key'>
+						<div class='imput'>S</div>
+						<div class='key-info'>Enviar item</div>
+					</div>
+					<div class='key'>
+						<div class='imput'>G</div>
+						<div class='key-info'>Desequipar mochila</div>
+					</div>
+					<div class='key'>
+						<div class='imput-img'><img src='assets/right-click.png'></div>
+						<div class='key-info'>Usar item</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src='lightsaber.js' type='text/javascript'></script>
+	</body>
+</html>

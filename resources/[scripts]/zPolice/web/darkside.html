@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>zPolice</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+         integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+      <link rel="stylesheet" href="theforce.css">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+   </head>
+   <body>
+      <div id="alert" class="success">
+         Aguarde, carregando...
+      </div>
+      <div id="painel_control_people">
+      <div class="container">
+         <div class="header">
+            <div class="row">
+               <div class="col-sm-1 title">
+               </div>
+               <div class="col-sm-8">
+                  <ul class="nav nav-pills nav-right" style="margin-top: 30px">
+                     <li role="presentation"><a href="#" id="botaozinho" onclick="return Everest.getListafugitives(null, true);">PROCURADOS</a></li>
+                     <li role="presentation"><a href="#" id="botaozinho" onclick="return Everest.getListaOcorrencias(null, true, 0);">OCORRÊNCIAS</a></li>
+                  </ul>
+               </div>
+               <div class="col-sm-3">
+                  <div class="input-group" style="margin-top: 28px">
+                     <input type="number" name="passaporte" class="form-control"
+                        placeholder="Informe o passaporte">
+                     <span class="input-group-btn">
+                     <button class="btn btn-default-pesquisar" type="button" onclick="Everest.getPassaporte()"><i
+                        class="glyphicon glyphicon-search"></i></button>
+                     </span>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="clear"></div>
+                  <hr />
+               </div>
+            </div>
+         </div>
+         <div class="row body">
+            <div class="col-md-3 col-sm-4">
+               <div class="thumbnail"><img class="img-profile" src="https://i.imgur.com/Y2tDbb1.png" id="img_pessoa" /></div>
+               <input type="file" id="my_file" style="display: none;" />
+            </div>
+            <div class="col-md-6 col-sm-6" id="infos">
+               <h6>NOME:</h6>
+               <h3>{NOME}</h3>
+               <h6>PASSAPORTE:</h6>
+               <h3>{PASSAPORTE}</h3>
+               <h6>RG:</h6>
+               <h3>{RG}</h3>
+               <h6>TELEFONE:</h6>
+               <h3>{TELEFONE}</h3>
+               <hr />
+               <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                     aria-haspopup="true" aria-expanded="false">
+                  Opções <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                     <li><a href="#" id="menuzinho" onclick="Everest.setMulta();">Multar</a></li>
+                     <li><a href="#" id="menuzinho" onclick="Everest.setPrisao();">Registrar Prisão</a></li>
+                     <li><a href="#" id="menuzinho" onclick="Everest.setOcorrencia();">Nova Ocorrência</a></li>
+                     <li><a href="#" id="menuzinho" onclick="Everest.setfugitive({fugitive})"><b>Procurado</b></a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-md-3">
+               <button class="btn btn-primary btn-block" onclick="Everest.setListaMultas(null, true)">${TOTALMULTAS} EM MULTAS</button>
+               <button class="btn btn-primary btn-block" onclick="Everest.getFichaCriminal(null, true);">FICHA CRIMINAL</button>
+               <button class="btn btn-primary btn-block" onclick="return Everest.getListaOcorrencias(null, true, passaporteAtual);">OCORRÊNCIAS</button>
+            </div>
+         </div>
+      </div>
+      <div id="modals"></div>
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+         integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+         crossorigin="anonymous"></script>
+      <script src="lightsaber.js"></script>
+   </body>
+</html>

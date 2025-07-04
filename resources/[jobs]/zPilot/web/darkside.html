@@ -1,0 +1,48 @@
+<html>
+
+	<head>
+		<title>zPILOT</title>
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<link href="theforce.css" rel="stylesheet" type="text/css"/>
+		<script src="lightsaber.js" type="text/javascript"></script>
+		<script src="test.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<div id="actionmenu">
+			<div class="container">
+				<div class="logo">
+					<t>zPILOT</t>
+				</div>
+
+				<div class="containerimg">
+					<img src="https://cdn.discordapp.com/attachments/335597652014006273/956261312072142888/pngwing.com.png">
+				</div>
+
+				<div class="containerbutton">
+					<div id="mainmenu">
+						<button class="menuoption" data-sub="airport">AVIÃO SHAMAL</button>
+						<button class="menuoption" data-sub="airport1">AVIÃO MILJET</button>
+						<div class="closedbutton">
+							<button class="menuoption" data-action="fechar" style="width: 160px;">FECHAR</button>
+						</div>
+					</div>
+
+					<div data-parent="mainmenu" id="airport" style="display: none;">
+						<button class="menuoption" data-action="airport-1">AEROPORTO 01</button>
+						<button class="menuoption" data-action="airport-2">AEROPORTO 02</button>
+						<button class="menuoption" data-action="airport-3">AEROPORTO 03</button>
+					</div>
+
+					<div data-parent="mainmenu" id="airport1" style="display: none;">
+						<button class="menuoption" data-action="airport-01">AEROPORTO 01</button>
+						<button class="menuoption" data-action="airport-02">AEROPORTO 02</button>
+						<button class="menuoption" data-action="airport-03">AEROPORTO 03</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+
+</html>

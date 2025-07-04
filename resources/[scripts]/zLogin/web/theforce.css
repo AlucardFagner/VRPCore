@@ -1,0 +1,108 @@
+body {
+	height: auto;
+    width: auto;
+}
+
+h1 {
+    margin-left: 55px;
+    margin-bottom: 5px;
+    padding: 0;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    font-size: 20px;
+    color: white;
+}
+
+h2 {
+    display: flex;
+    margin: 12px;
+    padding: 0;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: white;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+
+#bg-selection{
+	display: none; 
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95)), url(https://grainy-gradients.vercel.app/noise.svg);
+	color: #fff;
+	overflow: hidden;
+}
+
+#selection-menu {
+    display: none;
+    position: absolute;
+	width: auto;
+	height: 436px;
+	top: 50%;
+	left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.localization {
+    width: 200px;
+    height: 436px;
+    margin: 10px;
+    float: left;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    transition: transform .2s;
+}
+
+.background-spawn {
+    width: 95%;
+    height: 90%;
+
+    margin-left: 2.5%;
+    margin-top: 2.5%;
+
+    overflow: hidden;
+}
+
+.localization:hover{
+    transform: scale(1.05);
+    background-color: #444444e1 !important; 
+	border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45)) 1;
+}
+
+#buttoms-menu {
+    display: none;
+    position: absolute;
+    width: auto;
+	height: auto;
+    
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 8px;
+}
+
+.buttom {
+    float: left;
+    
+    width: 220px;
+
+    margin: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    transition: transform .2s;
+
+    background-image: linear-gradient(to left, rgba(0,0,0,0.85), rgba(0,0,0,0.75));
+}
+
+.buttom:hover{
+	border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45)) 1;
+    transform: scale(1.08);
+}

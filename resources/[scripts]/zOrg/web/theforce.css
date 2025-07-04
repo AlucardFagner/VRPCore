@@ -1,0 +1,500 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+:focus { 
+    outline: 0;
+    border: 0;
+}
+
+input{
+    border: none;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 11px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+button{
+    border: none;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+::selection { background: transparent; }
+::-moz-selection { background: transparent; }
+
+* {
+	font-family: 'Roboto', sans-serif;
+    color: #fff;
+	box-sizing: border-box;
+	user-select: none;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+/*========================================================*/
+
+#actionmenu {
+	display: none;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95)), url(https://grainy-gradients.vercel.app/noise.svg);
+	color: #fff;
+	overflow: hidden;
+}
+
+/*========================================================*/
+
+#home {
+	display: none;
+    position: absolute;
+	width: 880px;
+    height: 520px;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+	border-radius: 3px;
+}
+
+#manager {
+    display: none;
+    position: absolute;
+	width: 880px;
+    height: 520px;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+	border-radius: 3px;
+}
+
+#manage-member {
+    display: none;
+    position: absolute;
+	width: 880px;
+    height: 520px;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+	border-radius: 3px;
+}
+
+
+/*========================================================*/
+
+.top {
+    width: 880;
+    height: 50px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95)), url(https://grainy-gradients.vercel.app/noise.svg);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.org-text {
+    position: absolute;
+    max-width: 500px;
+    overflow: hidden;
+    font-size: 50px;
+    letter-spacing: 15;
+    left: 20px;
+    top: -29px;
+    text-transform: uppercase;
+}
+
+#manage {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 250px;
+    height: 30px;
+    font-weight: 500;
+    color: white;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#manage:hover {
+    background-color: #444444e1 !important; 
+	border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45)) 1;
+}
+
+#back {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 150px;
+    height: 30px;
+    font-weight: 500;
+    color: white;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#back:hover {
+    background-color: #444444e1 !important; 
+	border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45)) 1;
+}
+
+
+/*========================================================*/
+
+#player-text {
+    position: absolute;
+    top: 60px;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.548);
+    
+}
+
+#tef-player{
+    position: absolute;
+    top: 70px;
+    left: 75px;
+    width: 344px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.548);
+}
+
+#tef-member{
+    position: absolute;
+    top: 70px;
+    left: 532px;
+    width: 342px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.548);
+}
+
+#member-text {
+    position: absolute;
+    top: 60px;
+    left: 454px;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.548);
+}
+
+/*========================================================*/
+
+#player-list {
+    position: relative;
+    float: left;
+	width: 425px;
+    height: 430px;
+    overflow: auto;
+    padding-right: 5px;
+    margin-top: 40px;
+}
+
+.player {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    margin-bottom: 10px;
+}
+
+#player-id {
+    position: relative;
+	float: left;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    margin-top: 11px;
+    margin-left: 15px;
+}
+
+#player-name {
+    position: relative;
+    width: 230px;
+	float: left;
+
+    font-size: 22px;
+    font-weight: 300;
+
+    margin-top: 11px;
+    margin-left: 5px;
+    overflow: hidden;
+}
+
+#invite {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: 30px;
+    font-weight: 500;
+    color: white;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#invite:hover {
+    background-color: #444444e1 !important; 
+	border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45)) 1;
+}
+
+/*========================================================*/
+
+#member-list {
+    position: relative;
+    float: left;
+	width: 425px;
+    height: 430px;
+    overflow: auto;
+	margin-left: 30px;
+    padding-right: 5px;
+    margin-top: 40px;
+}
+
+.member {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    margin-bottom: 10px;
+}
+
+#member-id {
+    position: relative;
+	float: left;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    margin-top: 11px;
+    margin-left: 15px;
+}
+
+#member-name {
+    position: relative;
+    width: 230px;
+	float: left;
+
+    font-size: 22px;
+    font-weight: 300;
+
+    margin-top: 11px;
+    margin-left: 5px;
+    overflow: hidden;
+}
+
+#edit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: 30px;
+    font-weight: 500;
+    color: white;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#edit:hover {
+    background-color: #444444e1 !important; 
+	border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45)) 1;
+}
+
+/*========================================================*/
+
+::-webkit-scrollbar {
+	margin: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+	margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+	margin: 0;
+    padding: 0;
+    background: rgba(255,255,255,0.5);
+    border-radius: 3px;
+}
+
+#withdraw {
+    position: absolute;
+    top: 60px;
+	width: 880px;
+    height: 50px;
+    overflow: auto;
+    padding-right: 5px;
+    background-color: rgba(0, 0, 0, 0.651);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.amount {
+    position: absolute;
+    width: 180px;
+    right: 230px;
+    height: 30px;
+    top: 10px;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#deposit-b {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: 30px;
+    font-weight: 500;
+    color: white;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#deposit-b:hover {
+    background-color: #444444e1 !important; 
+	border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45)) 1;
+}
+
+#withdraw-b {
+    position: absolute;
+    top: 10px;
+    right: 120px;
+    width: 100px;
+    height: 30px;
+    font-weight: 500;
+    color: white;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#withdraw-b:hover {
+    background-color: #444444e1 !important; 
+	border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45)) 1;
+}
+
+#member-count {
+    position: absolute;
+    top: 13px;
+    left: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.548);
+}
+
+#vault-balance {
+    position: absolute;
+    top: 13px;
+    left: 130px;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.548);
+}
+
+n {
+    color: rgba(255, 255, 255, 0.801);
+    font-weight: 900;
+}
+
+#member-managed {
+    position: absolute;
+    top: 60px;
+	width: 880px;
+    height: 50px;
+    overflow: auto;
+    padding-right: 5px;
+    background-color: rgba(0, 0, 0, 0.651);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#member-namess {
+    position: absolute;
+    top: 13px;
+    left: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.548);
+}
+
+#member-managed .amount {
+    right: 120px;
+}
+
+#update {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: 30px;
+    font-weight: 500;
+    color: white;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#update:hover {
+    background-color: #444444e1 !important; 
+	border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45)) 1;
+}
+
+#dongradeRole {
+    position: absolute;
+    top: 10px;
+    right: 310px;
+    width: 100px;
+    height: 30px;
+    font-weight: 500;
+    color: white;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#dongradeRole:hover {
+    background-color: #444444e1 !important; 
+	border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45)) 1;
+}
+
+#updateRole {
+    position: absolute;
+    top: 10px;
+    right: 420px;
+    width: 100px;
+    height: 30px;
+    font-weight: 500;
+    color: white;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#updateRole:hover {
+    background-color: #444444e1 !important; 
+	border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45)) 1;
+}

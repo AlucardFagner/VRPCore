@@ -1,0 +1,318 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: auto;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  background: transparent;
+}
+
+@font-face {
+  font-family: 'Edo';
+  src: url('font/edosz.ttf');
+}
+
+.container {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#fainting {
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: none;
+}
+
+#fainting .container_ {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#Death {
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: none;
+}
+
+#Death .container__ {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img {
+
+  width: 20vh;
+  height: 20vh;
+  display:flex;
+  justify-content: space-evenly;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 200px;
+  bottom: 80%;
+}
+
+.fainting_title {
+  font-size: 7vw;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fainting_title1 {
+  font-size: 7vw;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(0, 0, 0);
+  text-transform: capitalize;
+  background: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45));
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 3px transparent;
+}
+.informationss .aviso {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 22px;
+  color: rgb(235, 48, 89);
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 0px;
+  position: absolute;
+  left: 50%;
+  top: 150%;
+  transform: translate(-50%, 0);
+  width: 300px;
+  padding: 4px;
+  border-radius: 0px;
+}
+
+
+.clocktexto {
+  text-align: center;
+  font-size: 22px;
+  color: rgb(255,255,255);
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 150%;
+  transform: translate(-50%, 0);
+  width: 300px;
+  padding: 4px;
+}
+
+#fainting .container_ .botao {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-top: 250px;
+  text-transform: uppercase;
+  width: 300px;
+  text-align: center;
+  padding: 3px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.botao{
+  background: transparent;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15));
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  
+}
+
+.botao:hover{
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95)), url(https://grainy-gradients.vercel.app/noise.svg);
+  background-color: #444444e1 !important; 
+  border-style: solid;
+  border-width: 2px;
+  border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45) ) 1;
+ 
+}
+
+.botao:hover{
+  animation: fadein 1.5s;
+}
+
+@keyframes fadein {
+  from { opacity: 0.5; }
+  to   { opacity: 1; }
+}
+
+.DeathB {
+  border: none;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-top: 250px;
+  text-transform: uppercase;
+  width: 300px;
+  text-align: center;
+  padding: 3px;
+  background: transparent;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15));
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.DeathB:hover{
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95)), url(https://grainy-gradients.vercel.app/noise.svg);
+  background-color: #444444e1 !important; 
+  border-style: solid;
+  border-width: 2px;
+  border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45) ) 1;
+  animation: fadein .5s;
+}
+
+
+#Death {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  color: white;
+  border-radius: 2vw;
+  display: none;
+}
+
+.popup .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  display: none;
+}
+
+.popup .content {
+  position: absolute;
+  bottom: 23%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95)), url(https://grainy-gradients.vercel.app/noise.svg);
+  width: 50%;
+  max-width: 350px;
+  height: 130px;
+  border-style: solid;
+  border-width: 2px;
+  border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45) ) 1;
+
+  z-index: 2;
+  text-align: right;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.popup .btn {
+  position: relative;
+  top: 10%;
+  outline: none !important;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.btn-desistir {
+  position: relative;
+  top: 10%;
+  outline: none !important;
+  font-weight: bold;
+  color:black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.btn-desistir:hover {
+  position: relative;
+  top: 10%;
+  outline: none !important;
+  font-weight: bold;
+  color: red;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.btn-warning {
+  background: rgba(0, 0, 0, 0.4);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15));
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0px;
+}
+
+.btn-warning:hover{
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95)), url(https://grainy-gradients.vercel.app/noise.svg);
+  border-style: solid;
+  border-width: 2px;
+  border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45) ) 1;
+  animation: fadein .5s;
+}
+
+.popup .title {
+  position: relative;
+  font-size: 16px;
+  top: -5%;
+  text-align: left;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.popup.active .overlay {
+  display: block;
+}
+
+.popup.active .content {
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup .warning {
+  float: left;
+  color: red;
+}
+
+.hello {
+  float: right;
+}
+
+.subtitle {
+  padding-left: 20px;
+  color:white;
+}

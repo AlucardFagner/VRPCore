@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <title>zLoadingScreen</title>
+        <script src='nui://game/ui/jquery.js' type='text/javascript'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+        <link href='theforce.css' rel='stylesheet' type='text/css'/>
+        <link href='https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap' rel='stylesheet'>
+    </head>
+    <body>
+        <div id='fare'></div>
+
+        <video autoplay muted loop id='video'>
+		    <source src='media/video/background.mp4' type='video/mp4'>
+		</video>
+
+        <div class='loader' title='2'>
+            <svg version='1.1' id='loader-1' xmlns='https://www.w3.org/2000/svg' xmlns:xlink='https://www.w3.org/1999/xlink' x='0px' y='0px'
+                width='60px' height='60px' viewBox='0 0 50 50' style='enable-background:new 0 0 50 50;' xml:space='preserve'>
+                <path fill='#000' d='M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z'>
+                    <animateTransform attributeType='xml' attributeName='transform' type='rotate' from='0 25 25' to='360 25 25' dur='0.6s' repeatCount='indefinite'/>
+                </path>
+            </svg>
+        </div>
+
+        <div id='loading'>Aguarde, o servidor está carregando.</div>
+
+        <div class='player'>
+            <span id='arm'></span>
+            <ul>
+                <li class='artwork'></li>
+                <li class='info'>
+                    <h1 id='artist'>loading</h1>
+                    <h4 id='album'>loading</h4>
+                    <h2 id='song'>loading</h2>
+                    <div class='button-items'>
+                        <audio id='music' preload='auto'>
+                        </audio>
+                        <div id='slider'>
+                            <div id='buffered'></div>
+                            <div id='elapsed'></div>
+                        </div>
+                        <p id='timer'>0:00</p>
+                        <div class='controls'>
+                            <span class='expend'>
+                                <svg id='previous' class='step-backward' viewBox='0 0 25 25' xml:space='preserve'>
+                                    <g>
+                                        <polygon points='4.9,4.3 9,4.3 9,11.6 21.4,4.3 21.4,20.7 9,13.4 9,20.7 4.9,20.7'/>
+                                    </g>
+                                </svg>
+                            </span>
+                            <svg id='play' viewBox='0 0 25 25' xml:space='preserve'>
+                                <defs>
+                                    <rect x='-49.5' y='-132.9' width='446.4' height='366.4'/>
+                                    <linearGradient id='linear-gradient' y1='0.5' x2='1' y2='0.5' gradientUnits='objectBoundingBox'>
+                                        <stop offset='0' stop-color='#5845ff'/>
+                                        <stop offset='0.06' stop-color='#5e45fe'/>
+                                        <stop offset='0.14' stop-color='#6e46f9'/>
+                                        <stop offset='0.23' stop-color='#8946f2'/>
+                                        <stop offset='0.33' stop-color='#af48e9'/>
+                                        <stop offset='0.44' stop-color='#df49dc'/>
+                                        <stop offset='0.5' stop-color='#ff4ad4'/>
+                                        <stop offset='0.56' stop-color='#fe5ab4'/>
+                                        <stop offset='0.67' stop-color='#fe7184'/>
+                                        <stop offset='0.77' stop-color='#fd845e'/>
+                                        <stop offset='0.86' stop-color='#fc9143'/>
+                                        <stop offset='0.94' stop-color='#fc9933'/>
+                                        <stop offset='1' stop-color='#fc9c2d'/>
+                                    </linearGradient>
+                                </defs>
+                                <g>
+                                    <circle fill='none' cx='12.5' cy='12.5' r='10.8'/>
+                                    <path fill-rule='evenodd' clip-rule='evenodd' d='M8.7,6.9V18c0,0,0.2,1.4,1.8,0l8.1-4.8c0,0,1.2-1.1-1-2L9.8,6.5 C9.8,6.5,9.1,6,8.7,6.9z'/>
+                                </g>
+                            </svg>
+                            <svg id='pause' viewBox='0 0 25 25' xml:space='preserve'>
+                                <defs>
+                                    <linearGradient id='linear-gradient-pause' y1='0.5' x2='1' y2='0.5' gradientUnits='objectBoundingBox'>
+                                        <stop offset='0' stop-color='#5845ff'/>
+                                        <stop offset='0.06' stop-color='#5e45fe'/>
+                                        <stop offset='0.14' stop-color='#6e46f9'/>
+                                        <stop offset='0.23' stop-color='#8946f2'/>
+                                        <stop offset='0.33' stop-color='#af48e9'/>
+                                        <stop offset='0.44' stop-color='#df49dc'/>
+                                        <stop offset='0.5' stop-color='#ff4ad4'/>
+                                        <stop offset='0.56' stop-color='#fe5ab4'/>
+                                        <stop offset='0.67' stop-color='#fe7184'/>
+                                        <stop offset='0.77' stop-color='#fd845e'/>
+                                        <stop offset='0.86' stop-color='#fc9143'/>
+                                        <stop offset='0.94' stop-color='#fc9933'/>
+                                        <stop offset='1' stop-color='#fc9c2d'/>
+                                    </linearGradient>
+                                </defs>
+                                <g>
+                                    <rect x='6' y='4.6' width='3.8' height='15.7'/>
+                                    <rect x='14' y='4.6' width='3.9' height='15.7'/>
+                                </g>
+                            </svg>
+                            <span class='expend'>
+                                <svg id='next' class='step-foreward' viewBox='0 0 25 25' xml:space='preserve'>
+                                    <g>
+                                        <polygon points='20.7,4.3 16.6,4.3 16.6,11.6 4.3,4.3 4.3,20.7 16.7,13.4 16.6,20.7 20.7,20.7'/>
+                                    </g>
+                                </svg>
+                            </span>
+                            <div class='slider'>
+                                <div class='volume'></div>
+                                <input type='range' id='volume' min='0' max='1' step='0.01' value='1'/>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <script src='lightsaber.js' type='text/javascript'></script>
+    </body>
+</html>

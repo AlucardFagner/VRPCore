@@ -1,0 +1,497 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+:focus { 
+    outline: 0;
+    border: 0;
+}
+
+input{
+    border: none;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 11px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+button{
+    border: none;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+}
+
+::selection { background: transparent; }
+::-moz-selection { background: transparent; }
+
+* {
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+	user-select: none;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+/*========================================================*/
+
+#actionmenu{
+	display: none;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95)), url(https://grainy-gradients.vercel.app/noise.svg);
+	color: #fff;
+	overflow: hidden;
+}
+
+/*========================================================*/
+
+#shop {
+	position: absolute;
+	width: 910px;
+    height: max-content;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#inventory-items {
+	position: relative;
+	float: left;
+	width: 425px;
+    height: 430px;
+    overflow: auto;
+	margin-left: 30px;
+	margin-top: 20px;
+	overflow-y: scroll;
+}
+
+#shop-items {
+	position: relative;
+	float: left;
+	width: 425px;
+    height: 430px;
+    overflow: auto;
+	margin-left: 30px;
+	margin-top: 20px;
+	overflow-y: scroll;
+}
+
+/*========================================================*/ 
+
+.item {
+	position: relative;
+	float: left;
+    width: 130px;
+    height: 130px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	overflow: hidden;
+}
+
+.populated:hover, .hoverControl {
+	background-color: #444444e1 !important; 
+	border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45)) 1;
+}
+
+#item-icon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#hotbar-items .item #item-icon {
+	position: absolute;
+    width: 45px;
+    height: 45px;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#item-icon img {
+	position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#item-name {
+	position: absolute;
+	width: 130px;
+    height: 17px;
+    padding-top: 3px;
+	padding-left: 10px;
+	bottom: 10px;
+	color: #c5c5c5;
+	border-radius: 0 0 3px 3px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    font-size: 12;
+    font-weight: 700;
+}
+
+#item-amount {
+    position: absolute;
+    width: 49px;
+    top: 10px;
+    right: 10px;
+	color: rgba(255,255,255,0.5);
+	text-align: right;
+	font-size: 11px;
+	float: right;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#hotbar-items .item #item-amount {
+	position: absolute;
+    width: 49px;
+    top: 5px;
+    right: 5px;
+	color: rgba(255,255,255,0.5);
+	text-align: right;
+	font-size: 11px;
+	float: right;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#item-weight {
+    position: absolute;
+    width: 35px;
+    top: 10px;
+    left: 10px;
+	color: rgba(255,255,255,0.5);
+	text-align: left;
+	font-size: 11px;
+	float: left;
+}
+
+#item-slot {
+    position: absolute;
+	padding: 5px;
+	padding-top: 4px;
+	padding-left: 6.5px;
+    width: 20px;
+	height: 20px;
+    top: 5px;
+    left: 5px;
+	background-color: rgba(255, 255, 255, 0.5);
+	font-weight: 800;
+	border-radius: 3px;
+	text-align: left;
+	font-size: 11px;
+	float: left;
+}
+
+/*========================================================*/ 
+.info-left {
+	position: relative;
+	float: left;
+	width: 425px;
+	height: 50px;
+	margin-left: 30px;
+}
+
+.info-left-icon {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	float: left;
+	background-image: linear-gradient(to right, rgba(255,255,255,0.5), rgba(255, 255, 255, 0.7)), url(https://grainy-gradients.vercel.app/noise.svg);
+	border-radius: 5px;
+}
+
+.info-left-icon img {
+	position: absolute;
+	width: 60%;
+	height: 60%;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.info-left-text {
+	position: relative;
+	width: 270px;
+	height: 50px;
+	float: left;
+	margin-left: 10px;
+}
+
+.info-left-title {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 800;
+	font-size: 16px;
+}
+
+.info-left-description {
+	position: relative;
+	width: 100%;
+	word-wrap: break-word;
+	font-family: 'Open Sans', sans-serif;
+	color: rgba(255,255,255,0.5);
+	font-size: 12px;
+}
+
+.info-right {
+	position: relative;
+	float: left;
+	width: 425px;
+	height: 50px;
+	margin-left: 30px;
+}
+
+.info-right-icon {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	float: left;
+	background-image: linear-gradient(to right, rgba(255,255,255,0.5), rgba(255, 255, 255, 0.7)), url(https://grainy-gradients.vercel.app/noise.svg);
+	border-radius: 5px;
+}
+
+.info-right-icon img {
+	position: absolute;
+	width: 60%;
+	height: 60%;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.info-right-text {
+	position: relative;
+	width: 270px;
+	height: 50px;
+	float: left;
+	margin-left: 10px;
+}
+
+.info-right-title {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 800;
+	font-size: 16px;
+}
+
+.info-right-description {
+	position: relative;
+	width: 100%;
+	word-wrap: break-word;
+	font-family: 'Open Sans', sans-serif;
+	color: rgba(255,255,255,0.5);
+	font-size: 12px;
+}
+
+.info-weight {
+	position: relative;
+	float: left;
+	width: 880px;
+	height: max-content;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+
+.info-weight-weight {
+	position: relative;
+	float: left;
+	font-weight: 700;
+	font-size: 16px;
+	color: rgba(255, 255, 255, 0.836);
+}
+
+.info-weight-data {
+	position: relative;
+	float: left;
+	font-weight: 300;
+	margin-left: 10px;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	color: rgba(255,255,255,0.5);
+}
+
+.info-weight-data f{
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.836);
+	font-size: 16px;
+}
+
+.info-weight-fit {
+	position: absolute;
+	width: 495px;
+	height: 2px;
+	top: 50%;
+	right: 0px;
+	background-image: linear-gradient(to right, rgba(255,255,255,0.5), rgba(255, 255, 255, 0));
+}
+
+.keys {
+	position: relative;
+	float: left;
+	width: 845px;
+	height: 25px;
+	margin-left: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.key {
+	position: relative;
+	float: right;
+	margin-left: 20px;
+}
+
+.imput{
+	position: relative;
+	height: 25px;
+	float: left;
+	font-family: 'Roboto', sans-serif;
+	color: black;
+	font-weight: 800;
+	border-radius: 3px;
+	padding: 2.5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-image: linear-gradient(to right, rgba(255, 255, 255, 0.438), rgba(255, 255, 255, 0.205)), url(https://grainy-gradients.vercel.app/noise.svg);
+}
+
+.imput-img {
+	position: relative;
+	float: left;
+	width: 25px;
+	height: 25px;
+}
+
+.imput-img img {
+	width: 100%;
+	height: 100%;
+}
+
+.key-info {
+	position: relative;
+	float: left;
+	margin-left: 5px;
+	padding: 2.5px;
+	font-family: 'Open Sans', sans-serif;
+	color: rgba(255,255,255,0.5);
+	font-size: 14px;
+}
+
+/*========================================================*/
+
+
+/*========================================================*/
+
+::-webkit-scrollbar {
+	margin: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+	margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+	margin: 0;
+    padding: 0;
+    background: rgba(255,255,255,0.5);
+    border-radius: 3px;
+}
+
+/*========================================================*/
+
+.popup .content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95)), url(https://grainy-gradients.vercel.app/noise.svg);
+	border: 1px solid rgba(255, 255, 255, 0.25);
+
+	width: 350px;
+	height: 145px;
+	z-index: 2;
+	text-align: right;
+	padding: 10px;
+	box-sizing: border-box;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.amount {
+    position: relative;
+	float: left;
+    width: 310px;
+    height: 40px;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85));
+    font-size: 11;
+    font-weight: 400;
+    overflow: hidden;
+	text-overflow: ellipsis;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+	margin: 10px;
+}
+
+.amount:hover {
+    border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45)) 1;
+}
+  
+.popup .btn {
+	position: relative;
+	height: 40px;
+	width: 144px;
+	float: left;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 800;
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	outline: none !important;
+	background-image: linear-gradient(to right, rgba(255, 255, 255, 0.438), rgba(255, 255, 255, 0.205)), url(https://grainy-gradients.vercel.app/noise.svg);
+	margin: 10px;
+}
+
+.btn:hover {
+	background-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45)), url(https://grainy-gradients.vercel.app/noise.svg);
+}
+  
+.popup.active {
+	display: block;
+}
+  
+.popup.active .content {
+	transition: all 300ms ease-in-out;
+	transform: translate(-50%, -50%) scale(1);
+}

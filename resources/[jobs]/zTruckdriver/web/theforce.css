@@ -1,0 +1,136 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+:focus { 
+    outline: 0;
+    border: 0;
+}
+
+::selection { 
+    background: transparent; 
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+#actionmenu {
+    display: none;
+    position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95)), url(https://grainy-gradients.vercel.app/noise.svg);
+	color: #fff;
+	overflow: hidden;
+}
+
+.container {
+    position: relative;
+    height: 400px;
+	width: 600px;
+    background-color: rgba(0, 0, 0, 0.5);
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid;
+    border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45)) 1;
+}
+
+.logo {
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    margin-top: -40px;
+    margin-left: 30px;
+    background-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45));
+    z-index: 1;
+}
+
+.logo t {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.containerimg {
+    position: relative;
+    float: left;
+    width: 260px;
+    height: 100%;
+
+}
+
+.containerimg img {
+    position: absolute;
+    margin: 1px 1px 1px 1px;
+    bottom: 0px;
+    width: 100%;
+}
+
+.containerbutton {
+    position: relative;
+    float: right;
+    width: 320px;
+    height: 100%;
+}
+
+.closedbutton {
+    position: absolute;
+    float: right;
+    bottom: 10px;
+    left: 70px;
+}
+
+#actionmenu button {
+    position: relative;
+    margin-left: 5px;
+    margin-top: 10px;
+    width: 305px;
+    height: 80px;
+    border: none;
+    background-size: 300% 100%;
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45)) 1;
+    cursor: pointer;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95));
+
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#actionmenu button:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+#actionmenu button:focus { 
+    outline: none;
+}
+  
+l {
+	width: 70%;
+	text-align: center;
+}
+
+r {
+    color: rgba(255,255,255,0.5);
+    width: 30%;
+    font-size: 14px;
+    float: right;
+}
+
+.menuoption{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95));
+}

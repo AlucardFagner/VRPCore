@@ -1,0 +1,926 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+:focus { 
+    outline: 0;
+    border: 0;
+}
+
+input {
+    border: none;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: #fff;
+    font-weight: 600;
+    cursor:context-menu;
+}
+
+button {
+    border: none;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+::selection { background: transparent; }
+::-moz-selection { background: transparent; }
+
+* {
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+	user-select: none;
+    direction: ltr;
+}
+
+body, html, form, input, button {
+    padding: 0;
+	margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #fff;
+}
+
+f {
+    color: #fff;
+    font-weight: 500;
+}
+
+/*==/ ALL /===============================================*/
+
+.page {
+    position: absolute;
+	height: 600px;
+	width: 900px;
+    margin:auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 30px;
+    padding-top: 70px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+.subpage {
+    position: absolute;
+    width: 400px;
+    height: max-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+.title_background {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    top: -40px;
+    background-image: linear-gradient(45deg, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45));
+}
+
+.description_text {
+    position: relative;
+    width: 360px;
+    height: max-content;
+    color: #c1c1c1c1;
+    font-size: 14;
+    margin-bottom: 20px;
+}
+
+.subpage_form_itens {
+    position: relative;
+    width: 360px;
+    height: 40px;
+    color: #fff;
+    font-weight: 800;
+    margin-top: 10px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+	border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 2px;
+}
+
+.button {
+    position: relative;
+    width: 360px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+}
+
+.button_after {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 13;
+    background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+}
+
+.button_before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    font-weight: 900;
+    background-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45));
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.button:hover .button_before {
+    width: 100%;
+}
+
+.left_content {
+    position: relative;
+    width: 285px;
+    height: max-content;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+.button_before_text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+	margin: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+	margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+	margin: 0;
+    padding: 0;
+    background: rgba(255,255,255,0.5);
+    border-radius: 3px;
+}
+
+/*==/ ACTIONMENU /========================================*/
+
+#actionmenu {
+    display: none;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95)), url(https://grainy-gradients.vercel.app/noise.svg);
+	color: #fff;
+}
+
+#pay, #loan, #transfers, #deposit, #withdraw, #credit, #home, #login, #reset, #new_account {
+    display: none;
+}
+
+/*==/ PAY /===============================================*/
+
+#pages_balance {
+    position: absolute;
+    width: max-content;
+    height: 40px;
+    top: 15px;
+    right: 250px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+#button_pay_back {
+    position: absolute;
+    width: 200px;
+    top: 15px;
+    right: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#invoices-info {
+    position: absolute;
+    width: 830px;
+    height: 20px;
+    top: 70px;
+    font-size: 12;
+    padding-top: 1px;
+    color: #c1c1c1c1;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+#invoices {
+    position: absolute;
+    width: 840px;
+    height: 470px;
+    bottom: 30px;
+    left: 30px;
+    overflow: auto;
+}
+
+.invoice {
+    position: relative;
+    width: 830px;
+    height: 60px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.05));
+}
+
+#invoice_data {
+    position: absolute;
+    max-width: 600px;
+    height: 40px;
+    top: 10px;
+    left: 10px;
+    overflow: hidden;
+}
+
+#button_invoice {
+    position: absolute;
+    width: 200px;
+    top: 10px;
+    right: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.invoice_data_content {
+    position: relative;
+    width: max-content;
+    height: 40px;
+    margin-right: 10px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+/*==/ LOAN /==============================================*/
+
+.loans_data {
+    position: absolute;
+    width: 530px;
+    height: 80px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+#loan_available {
+    top: 70px;
+    right: 40px;
+}
+
+#loan_contracted {
+    top: 165px;
+    right: 40px;
+}
+
+.loans_data h3 {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    font-size: 33;
+    top: 18px;
+    right: 20px;
+}
+
+.loans_data p {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    font-size: 18;
+    top: 28px;
+    left: 20px;
+    color: #c1c1c1c1;
+}
+
+#loan_installments_title {
+    position: absolute;
+    width: 530px;
+    height: max-content;
+    top: 260px;
+    right: 40px;
+    color: #c1c1c1c1;
+    border-bottom: 1px solid #c1c1c1c1;
+}
+
+#loan_installments {
+    position: absolute;
+    width: 540px;
+    height: 120px;
+    top: 290px;
+    right: 30px;
+    overflow: auto;
+}
+
+.loan_installment {
+    position: relative;
+    width: 530px;
+    height: 40px;
+    padding: 6.5px;
+    margin-bottom: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+.loan_installment_itens {
+    position: relative;
+    width: max-content;
+    height: max-content;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    float: left;
+    margin-right: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+#loan_form {
+    position: absolute;
+    width: 530px;
+    height: max-content;
+    top: 425px;
+    right: 40px;
+}
+
+.loan_form_itens {
+    position: relative;
+    width: 530px;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+#button_loan_contract {
+    width: 530px;
+}
+
+/*==/ TRANSFERS /=========================================*/
+
+#transfers_form {
+    position: relative;
+    width: 830px;
+    height: max-content;
+}
+
+.transfers_form_itens {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+#button_transfers_transfers {
+    width: 100%;
+}
+
+#transfer_key_title {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    margin-top: 20px;
+    color: #c1c1c1c1;
+    border-bottom: 1px solid #c1c1c1c1;
+}
+
+#transfers_key_form_my {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 40px;
+    margin-top: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+#button_key_update {
+    width: 409px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/*==/ DEPOSIT /===========================================*/
+
+#deposit_form {
+    position: relative;
+    width: 830px;
+    height: max-content;
+}
+
+#deposit_form_value {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+#deposit_form_deposit {
+    width: 100%;
+}
+
+/*==/ WHITDRAW /==========================================*/
+
+#withdraw_form {
+    position: relative;
+    width: 830px;
+    height: max-content;
+}
+
+#withdraw_form_value {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+#withdraw_form_withdraw {
+    width: 100%;
+}
+
+/*==/ CREDIT /============================================*/
+
+.credits_data {
+    position: absolute;
+    width: 530px;
+    height: 80px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+#credit_available {
+    top: 70px;
+    right: 40px;
+}
+
+#credit_contracted {
+    top: 165px;
+    right: 40px;
+}
+
+.credits_data h3 {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    font-size: 33;
+    top: 18px;
+    right: 20px;
+}
+
+.credits_data p {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    font-size: 18;
+    top: 28px;
+    left: 20px;
+    color: #c1c1c1c1;
+}
+
+#credit_installments_title {
+    position: absolute;
+    width: 530px;
+    height: max-content;
+    top: 260px;
+    right: 40px;
+    color: #c1c1c1c1;
+    border-bottom: 1px solid #c1c1c1c1;
+}
+
+#credit_installments {
+    position: absolute;
+    width: 540px;
+    height: 120px;
+    top: 290px;
+    right: 30px;
+    overflow: auto;
+}
+
+.credit_installment {
+    position: relative;
+    width: 530px;
+    height: 40px;
+    padding: 6.5px;
+    margin-bottom: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+.credit_installment_itens {
+    position: relative;
+    width: max-content;
+    height: max-content;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    float: left;
+    margin-right: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+#credit_form {
+    position: absolute;
+    width: 530px;
+    height: max-content;
+    top: 425px;
+    right: 40px;
+}
+
+.credit_form_itens {
+    position: relative;
+    width: 530px;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+#button_credit_card {
+    position: absolute;
+    width: 530px;
+    top: 425px;
+    right: 40px;
+}
+
+/*==/ HOME /==============================================*/
+
+.cards {
+    position: relative;
+    width: 290px;
+    height: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    margin-bottom: 20px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+    padding: 10px;
+}
+
+.cards_title {
+    position: absolute;
+    width: 150px;
+    height: max-content;
+    padding: 3px;
+    padding-left: 10px;
+    top: -12px;
+    color: #fff;
+    font-size: 14;
+    font-weight: 600;
+    letter-spacing: 2;
+    background-image: linear-gradient(45deg, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45));
+    border-radius: 2px;
+}
+
+.cards h3 {
+    margin-top: 20px;
+}
+
+.cards p {
+    margin-top: 2px;
+    color: #c1c1c1c1;
+    font-size: 15;
+}
+
+#balances {
+    position: absolute;
+    width: 530px;
+    height: 200px;
+    bottom: 330px;
+    right: 30px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+#balances h1 {
+    font-size: 28;
+}
+
+#balances p {
+    font-size: 15;
+    margin-top: 3px;
+    color: #c1c1c1c1;
+}
+
+#balance_data_info {
+    position: relative;
+    width: max-content;
+    height: max-content;
+    margin-top: 42px;
+}
+
+#balances h3 {
+    margin-top: 30px;
+}
+
+#score-text {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    top: 60px;
+    right: 180px;
+}
+
+
+#last_transactions_title {
+    position: absolute;
+    bottom: 280px;
+    right: 30px;
+    width: 530px;
+    height: max-content;
+    border-bottom: 1px solid #c1c1c1c1;
+}
+
+#last_transactions {
+    position: absolute;
+    bottom: 130px;
+    right: 30px;
+    width: 530px;
+    height: 150px;
+    overflow: auto;
+}
+
+.last_transaction {
+    position: relative;
+    width: 520px;
+    height: 40px;
+    margin-top: 10px;
+    padding: 8px;
+    
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+.last_transaction img {
+    position: relative;
+    height: 100%;
+    float: left;
+}
+
+.last_transaction_desc{
+    margin-top: 2px;
+    margin-left: 10px;
+    float: left;
+}
+
+.last_transaction_date{
+    margin-top: 4px;
+    margin-left: 10px;
+    float: left;
+    font-size: 13;
+    color: #c1c1c1c1;
+}
+
+.last_transaction_value{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#buttons {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+
+.button_home {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin-left: 10px;
+
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+}
+
+.button_img {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    top: 45%;
+    left: 50%;
+    transform: translate(-45%, -50%);
+    background-size: contain;
+}
+
+#action-pay-img {
+    background-image: url('images/pay.png');
+}
+
+#action-withdraw-img {
+    background-image: url('images/withdraw.png');
+}
+
+#action-deposit-img {
+    background-image: url('images/deposit.png');
+}
+
+#action-pix-img {
+    background-image: url('images/pix.png');
+}
+
+#action-loan-img {
+    background-image: url('images/loan.png');
+}
+
+#action-credit-img {
+    background-image: url('images/credit.png');
+}
+
+.button_desc {
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    font-size: 11;
+    text-align: center;
+    color: #c1c1c1c1;
+}
+
+.button_home:hover .button_desc {
+    color: #fff;
+    font-weight: 600;
+}
+
+.button_home:hover {
+    color: #fff;
+    border: none;
+    background-image: linear-gradient(45deg, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45));
+}
+
+.button_home:hover #action-pay-img {
+    background-image: url('images/pay-white.png');
+}
+
+.button_home:hover #action-withdraw-img {
+    background-image: url('images/withdraw-white.png');
+}
+
+.button_home:hover #action-deposit-img {
+    background-image: url('images/deposit-white.png');
+}
+
+.button_home:hover #action-pix-img {
+    background-image: url('images/pix-white.png');
+}
+
+.button_home:hover #action-loan-img {
+    background-image: url('images/loan-white.png');
+}
+
+.button_home:hover #action-credit-img {
+    background-image: url('images/credit-white.png');
+}
+
+/*==/ LOGIN /=============================================*/
+
+#login_login {
+    width: 175px;
+    margin-top: 10px;
+    float: left;
+}
+
+#exit {
+    width: 173px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.recovery_password_text {
+    position: relative;
+    width: 100%;
+    height: 12px;
+    text-align: right;
+    font-size: 12;
+    color: #c1c1c1c1;
+    cursor: pointer;
+}
+
+#reset_password_click {
+    text-decoration: underline;
+    color: #fff;
+    font-weight: 600;
+}
+
+/*==/ RESET /=============================================*/
+
+#reset_reset {
+    width: 175px;
+    margin-top: 10px;
+    float: left;
+}
+
+/*==/ NEW_ACCOUNT /========================================*/
+
+#new_account_new {
+    width: 175px;
+    margin-top: 10px;
+    float: left;
+}
+
+/*==/ SCORE_GAUG /=========================================*/
+
+canvas {
+    display: block;
+    position:absolute;
+    top: 40px;
+    right: 40px;
+    transition: all 1.5;
+}
+
+input {
+    width: 200px;
+}
+
+#text_score{
+    position: absolute;
+    width:120px;
+    line-height: 120px;
+    top: 40px;
+    right: 40px;
+
+    color:#fff;
+    
+    text-align:center;
+    
+    font-family:sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+}

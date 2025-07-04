@@ -1,0 +1,343 @@
+/* fontes */
+
+@font-face {
+    font-family: 'gonzi';
+    src: url('fonts/gonzi.otf');
+}
+
+@font-face {
+    font-family: 'pricedown';
+    src: url('fonts/pricedown.ttf');
+}
+
+body {
+    overflow: hidden;
+    /* font-family: Poppins, sans-serif; */
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    /* font-family: Poppins, sans-serif; */
+    user-select: none;
+    outline: none;
+}
+
+.clothes-shop {
+    display: none; 
+}
+
+.container {
+    position: absolute;
+    right: 1%;
+    top: 15%;
+    width: 500px;
+    height: 700px;
+    display: inline-flex;
+}
+
+.bottom {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    left: 0;
+    display: inline-flex;
+}
+
+.bottom .color {
+    padding: 5px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95)), url(https://grainy-gradients.vercel.app/noise.svg);
+    border-style: solid;
+    border-width: 1px;
+    border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45) ) 1;
+    width: 90px;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.line {
+    width: 1.50px;
+    height: 20px;
+    margin: 0 10px 0 10px;
+    background-color: #fff;
+}
+
+.selectors {
+    display: inline-flex;
+    float: right;
+    margin: 5px;
+    color: #fff !important;
+}
+
+.total {
+    width: 350px;
+    height: 40px;
+    padding: 7px 0 0 20px;
+    margin-left: 5px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95)), url(https://grainy-gradients.vercel.app/noise.svg);
+    text-transform: uppercase;
+    color: #2c2b2c;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-family: Poppins, sans-serif;
+}
+
+.total span{
+    color: #fff;
+}
+
+.totaltexto{
+    letter-spacing: 2px;
+}
+
+.icon-cart {
+    position: absolute;
+    top: 0;
+    right: 2px;
+    background-image: linear-gradient(45deg, rgb(16, 16, 16), rgb(53, 53, 53));
+    width: 50px;
+    height: 40px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+}
+
+.menu-store {
+    position: inherit;
+    float: left;
+    width: 45px;
+    display: inline-flex;
+}
+
+.menu-store .submenu-item {
+    float: right;
+    padding: 0 5px 3px 0;
+    background-image: linear-gradient(45deg, rgb(16, 16, 16), rgb(53, 53, 53));
+    margin-bottom: 18px;
+    box-sizing: border-box;
+    width: 70px;
+    height: 40px;
+}
+
+.menu-store .submenu-item .icon-submenu {
+    position: relative;
+    top: 4px;
+    padding-right: -5px;
+    width: 36.6px;
+    height: 30px;
+    background-size: cover;
+}
+
+.menu-store .submenu-item .icon-submenu img {
+    float: right;
+    width: 25px;
+    height: 25px;
+    margin-top: 3px;
+    margin-right: 1px;
+    background-size: cover;
+}
+
+.subActive {
+    width: 100% !important;
+    background-color: #ffffff !important;
+}
+
+.visual-store {
+    float: right;
+    width: 680px;
+    height: 590px;
+    margin-top: 45px;
+    background-image: linear-gradient(45deg, rgb(16, 16, 16), rgb(53, 53, 53));
+}
+
+.visual-store header {
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    /* text-transform: uppercase; */
+    font-family: 'gonzi';
+    letter-spacing: 1px;
+}
+
+.visual-store footer {
+    width: 90%;
+    height: 83%;
+    margin: .5% auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.visual-store footer .item-clothe {
+    position: relative;
+    display: flex;
+    margin: 0px 5px 10px;
+    height: 120px;
+    width: 120px;
+    transition: .2s;
+}
+
+.visual-store footer .item-clothe .img-clothe {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-size: 120px;
+    background-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+}
+
+
+.visual-store footer .item-clothe .img-clothe .overlay {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95)), url(https://grainy-gradients.vercel.app/noise.svg);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    font-family: 'Poppins';
+}
+
+.visual-store footer .item-clothe:hover {
+    border-style: solid;
+    border-width: 2px;
+    border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45) ) 1;
+    z-index: 999999999999;
+}
+
+.actions {
+    position: absolute;
+    display: flex;
+    margin-top: 50px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+.actions button {
+    border: 0;
+    color: #fff;
+    height: 50px;
+    font-size: 20px;
+    width: 80px;
+    text-align: center;
+    background-image: linear-gradient(45deg, rgb(16, 16, 16), rgb(53, 53, 53));
+}
+
+.actions img {
+    height: 50px;
+    width: 50px;
+}
+
+/* .actions> :first-child {
+    border-top-left-radius: 3px;
+}
+
+.actions> :last-child {
+    border-top-right-radius: 3px;
+
+} */
+
+.addCartbutton {
+    position: relative;
+    width: 60px;
+    height: 40px;
+    margin-left: 5px;
+    text-transform: uppercase;
+    background-image: linear-gradient(45deg, rgb(16, 16, 16), rgb(53, 53, 53));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: #fff;
+}
+
+.addCartbutton img {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: invert(1);
+}
+
+.addCartbutton:hover {
+    border-style: solid;
+    border-width: 1px;
+    border-image: linear-gradient(to right, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45) ) 1;
+    background-color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 1px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+ ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to bottom, rgb(88, 69, 255), rgb(255, 74, 212), rgb(252, 156, 45));
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(to bottom, rgb(88, 69, 255), rgb(255, 74, 212));
+}
+
+ ::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(left, #22ADD4, #1E98BA);
+}
+
+@media only screen and (max-width: 1366px) { /* 1366x768 */
+    .loja-de-roupa {
+        zoom: 0.9;
+        margin-top: -3%;
+    }
+    .container {
+        top: 11%;
+    }
+}
+
+@media only screen and (max-width: 1024px) { /* 1024x768 */
+    .loja-de-roupa {
+        zoom: 0.9;
+        margin-top: -3%;
+    }
+    .container {
+        top: 11%;
+    }
+}
+
+.dropdown:focus, button:focus{
+    outline: none;
+}
+
+body{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#paleta{
+    margin-top: 5px;
+}

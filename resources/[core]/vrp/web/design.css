@@ -1,0 +1,223 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,body {
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
+.console {
+	background-color: white;
+	color: red;
+}
+
+.wprompt {
+	font-family: "Roboto",Arial,Helvetica,sans-serif;
+	position: absolute;
+	background-color: rgba(0,0,0,0.7);
+	color: #fff;
+	width: 600px;
+	height: 150px;
+	display: flex;
+	flex-direction: column;
+	padding: 10px 15px;
+}
+
+.wprompt h1 {
+	font-size: 13px;
+	font-weight: 300;
+	padding: 7px 0 12px 5px;
+}
+
+.wprompt textarea {
+	outline: none !important;
+	background-color: rgba(0,0,0,0.5);
+	border: 1px solid rgba(255,255,255,0.2);
+	flex: 1;
+	color: #ccc;
+	font-size: 15px;
+	width: 100%;
+	padding: 10px;
+	resize: none;
+	box-sizing: border-box;
+}
+
+.wprompt textarea:focus {
+	outline: none !important;
+}
+
+.wprompt .help {
+	font-size: 12px;
+	padding: 12px 0 7px 5px;
+}
+
+.requestManager {
+	width: 100%;
+	height: 95%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+#NotifyBackground {
+    display: flex;
+    /* margin: 20%; */
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    line-height: 20px;
+    border-radius: 6px;
+    padding: 15px 20px;
+    margin-right: 10px;
+    font-family: "Roboto",Arial,Helvetica,sans-serif;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95)), url(https://grainy-gradients.vercel.app/noise.svg);
+    flex-direction: row;
+}
+
+#NotifyBackground green {
+    font-size: 1.1rem;
+    color: #000000;
+}
+
+#NotifyBackground red {
+    font-size: 1.1rem;
+    color: #000000;
+}
+@media screen and (min-width: 2160px) {
+    .interno .alert-logo img {
+        width: 1.62vw;
+        height: 2.92vh;
+    }
+    #NotifyBackground green {
+        font-size: 1.8rem;
+    }
+
+    #NotifyBackground red {
+        font-size: 1.8rem;
+    }
+}
+
+.texto {
+    font-size: 1rem;
+}
+
+@media screen and (min-width: 2160px) {
+	.interno .alert-logo img {
+		width: 1.62vw;
+		height: 2.92vh;
+	}
+
+    .texto {
+        font-size: 1.5rem;
+    }
+}
+
+.buttons {
+    position: relative;
+    top: 15px;
+    display: flex;
+    gap: 0.5vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    /* background-color: #92ac29; */
+    left: 60%;
+}
+
+.aceitar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 1.8rem;
+    color: white;
+    font-family: sans-serif;
+    border-radius: 6px;
+	background-image: radial-gradient(rgba(48, 189, 83, 0.7), rgba(48, 189, 83, 1.0));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.recusar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 3vw; */
+    /* height: 2.6vh; */
+    width: 4rem;
+    height: 1.8rem;
+    color: white;
+    font-family: sans-serif;
+    border-radius: 6px;
+	background-image: radial-gradient(rgba(189, 48, 48, 0.7), rgba(189, 48, 48, 1.0));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.recusar:hover {
+    background-color: rgb(189, 48, 48);
+}
+
+.interno {
+    display: flex;
+    /* width: 10px; */
+    /* height: 13%; */
+    /* gap: 4vh; */
+    flex-direction: row;
+    align-items: center;
+}
+
+.flex-container {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.interno .alert-logo img  {
+    width: 1.82vw;
+    height: 3.62vh;
+    filter: drop-shadow(0px 0px 0.8em #ffffff);
+}
+
+.alert-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 1vw;
+    height: 100%;
+    margin-right: 3vh;
+    /* gap: 200px; */
+    flex-direction: row;
+}
+
+#deathDiv {
+	width: 100%;
+	display: none;
+	bottom: 100px;
+	position: fixed;
+}
+
+#deathText {
+	width: 800px;
+	margin: 0 auto;
+	font-size: 20px;
+	text-align: center;
+	text-shadow: 1px 1px #000;
+	color: rgba(255,255,255,0.9);
+	font-family: "Jura",sans-serif;
+}
+
+#deathText color {
+	color: #92ac29;
+}
+
+#deathText color2 {
+	color: #bd962e;
+}
+
+#deathText i {
+	font-size: 13px;
+	font-style: normal;
+	letter-spacing: 2px;
+}
