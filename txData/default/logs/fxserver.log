@@ -1,0 +1,202 @@
+║             TXADMIN║ ================================================================
+║             TXADMIN║ ======== [16436] FXServer Starting - 04/07/2025 20:35:04        
+║             TXADMIN║ ================================================================
+[           resources] Scanning resources.
+[           resources] Found 66 resources.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for sessionmanager
+[           resources] Started resource sessionmanager
+[    c-scripting-core] Creating script environments for monitor
+[      script:monitor] [txAdmin] Resource v8.0.1 threads and commands set up. All Ready.
+[           resources] Started resource monitor
+[           resources] Started resource fivem
+[           resources] Started resource fivem-map-hipster
+[    c-scripting-core] Creating script environments for mapmanager
+[           resources] Started resource mapmanager
+[           resources] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for oxmysql
+[           resources] Started resource oxmysql
+[    c-scripting-core] Creating script environments for vrp
+[       resources:vrp] Warning: could not find file `lib/Luaseq.lua` (defined in fxmanifest.lua:28)
+[           resources] Started resource vrp (1 warning)
+[    c-scripting-core] Creating script environments for oxdrive
+[           resources] Started resource oxdrive
+[    c-scripting-core] Creating script environments for zBarberShops
+[           resources] Started resource zBarberShops
+[    c-scripting-core] Creating script environments for zCreator
+[           resources] Started resource zCreator
+[    c-scripting-core] Creating script environments for zMultiChar
+[           resources] Started resource zMultiChar
+[    c-scripting-core] Creating script environments for zSkinShops
+[           resources] Started resource zSkinShops
+[    c-scripting-core] Creating script environments for zAdmin
+[           resources] Started resource zAdmin
+[           resources] Started resource zAnimations
+[    c-scripting-core] Creating script environments for zBank
+[           resources] Started resource zBank
+[    c-scripting-core] Creating script environments for zCoins
+[           resources] Started resource zCoins
+[    c-scripting-core] Creating script environments for zCraft
+[           resources] Started resource zCraft
+[    c-scripting-core] Creating script environments for zDealership
+[           resources] Started resource zDealership
+[    c-scripting-core] Creating script environments for zDismantle
+[           resources] Started resource zDismantle
+[    c-scripting-core] Creating script environments for zDoors
+[           resources] Started resource zDoors
+[    c-scripting-core] Creating script environments for zFuel
+[           resources] Started resource zFuel
+[    c-scripting-core] Creating script environments for zGarages
+[           resources] Started resource zGarages
+[    c-scripting-core] Creating script environments for zHomes
+[           resources] Started resource zHomes
+[    c-scripting-core] Creating script environments for zHud
+[           resources] Started resource zHud
+[    c-scripting-core] Creating script environments for zInventory
+[           resources] Started resource zInventory
+[           resources] Started resource zLoadingscreen
+[    c-scripting-core] Creating script environments for zLogin
+[           resources] Started resource zLogin
+[    c-scripting-core] Creating script environments for zMedical
+[           resources] Started resource zMedical
+[    c-scripting-core] Creating script environments for zNotify
+[           resources] Started resource zNotify
+[    c-scripting-core] Creating script environments for zOrg
+[           resources] Started resource zOrg
+[    c-scripting-core] Creating script environments for zPlayer
+[           resources] Started resource zPlayer
+[    c-scripting-core] Creating script environments for zPolice
+[           resources] Started resource zPolice
+[    c-scripting-core] Creating script environments for zShops
+[           resources] Started resource zShops
+[           resources] Started resource zSounds
+[    c-scripting-core] Creating script environments for zSurvival
+[           resources] Started resource zSurvival
+[    c-scripting-core] Creating script environments for PolyZone
+[           resources] Started resource PolyZone
+[           resources] Started resource zTarget
+[    c-scripting-core] Creating script environments for zDriver
+[           resources] Started resource zDriver
+[    c-scripting-core] Creating script environments for zGarbargeman
+[           resources] Started resource zGarbargeman
+[    c-scripting-core] Creating script environments for zHarvest
+[           resources] Started resource zHarvest
+[    c-scripting-core] Creating script environments for zMiner
+[           resources] Started resource zMiner
+[    c-scripting-core] Creating script environments for zLumberman
+[           resources] Started resource zLumberman
+[    c-scripting-core] Creating script environments for zTaxi
+[           resources] Started resource zTaxi
+[    c-scripting-core] Creating script environments for zPostman
+[           resources] Started resource zPostman
+[    c-scripting-core] Creating script environments for zTruckdriver
+[           resources] Started resource zTruckdriver
+[    c-scripting-core] Creating script environments for chat
+[      resources:chat] Warning: could not find file `html/config.js` (defined in fxmanifest.lua:16)
+[           resources] Started resource chat (1 warning)
+[           resources] Started resource logsystem
+[           resources] Started resource minimap
+[    c-scripting-core] Creating script environments for mumble-voip
+[           resources] Started resource mumble-voip
+[    c-scripting-core] Creating script environments for vehcontrol
+[           resources] Started resource vehcontrol
+[resources:ped:stream] Asset ped/mp_f_freemode_01^hair_diff_001_a_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01^hair_diff_006_a_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01^hair_diff_007_a_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01^hair_diff_014_a_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01^task_004_u.ydd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_f_freemode_01^task_006_u.ydd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_f_freemode_01^task_diff_004_b_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_f_freemode_01^task_diff_004_c_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_f_freemode_01^task_diff_004_d_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_f_freemode_01^task_diff_004_e_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_f_freemode_01^task_diff_006_b_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_f_freemode_01^task_diff_006_c_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_f_freemode_01^task_diff_006_d_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_f_freemode_01^task_diff_006_e_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_f_freemode_01^task_diff_007_b_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_f_freemode_01^task_diff_007_c_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_f_freemode_01^task_diff_007_d_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_f_freemode_01^task_diff_007_e_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_f_freemode_01^teef_001_u.ydd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01^teef_002_u.ydd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01^teef_003_u.ydd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01_female_freemode_beach^hair_diff_001_a_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01_female_freemode_business^jbib_diff_001_a_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01_mp_f_bikerdlc_01^hair_diff_000_a_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01_mp_f_january2016^hand_000_u.ydd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01_mp_f_january2016^hand_diff_000_a_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01_mp_f_january2016^hand_diff_000_b_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01_mp_f_january2016^hand_diff_000_c_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01_mp_f_january2016^hand_diff_000_d_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01_mp_f_january2016^hand_diff_000_e_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01_mp_f_january2016^task_diff_010_b_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01_mp_f_january2016^task_diff_010_c_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01_mp_f_stunt_01^jbib_diff_004_a_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_f_freemode_01_p^p_head_000.ydd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_m_freemode_01^hair_diff_004_a_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_m_freemode_01^task_004_u.ydd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_m_freemode_01^task_006_u.ydd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_m_freemode_01^task_diff_004_b_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_m_freemode_01^task_diff_004_c_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_m_freemode_01^task_diff_004_d_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_m_freemode_01^task_diff_004_e_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_m_freemode_01^task_diff_006_b_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_m_freemode_01^task_diff_006_c_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_m_freemode_01^task_diff_006_d_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_m_freemode_01^task_diff_006_e_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_m_freemode_01^task_diff_007_b_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_m_freemode_01^task_diff_007_c_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_m_freemode_01^task_diff_007_d_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_m_freemode_01^task_diff_007_e_uni.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:ped:stream] Asset ped/mp_m_freemode_01_mp_m_january2016^hand_000_u.ydd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_m_freemode_01_mp_m_january2016^hand_diff_000_a_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_m_freemode_01_mp_m_january2016^hand_diff_000_b_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_m_freemode_01_mp_m_january2016^hand_diff_000_c_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_m_freemode_01_mp_m_january2016^hand_diff_000_d_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_m_freemode_01_mp_m_january2016^hand_diff_000_e_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_m_freemode_01_mp_m_january2016^jbib_diff_000_a_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_m_freemode_01_mp_m_january2016^task_diff_010_b_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_m_freemode_01_mp_m_january2016^task_diff_010_c_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_m_freemode_01_mp_m_january2016^task_diff_010_k_uni.ytd uses 32.0 MiB of physical memory.
+[resources:ped:stream] Asset ped/mp_m_freemode_01_mp_m_stunt_01^jbib_diff_004_a_uni.ytd uses 32.0 MiB of physical memory.
+[           resources] Started resource ped (60 warnings)
+[resources:zirix_maps] Asset zirix_maps/brofx_5_drak.ydr uses 48.0 MiB of virtual memory.
+[resources:zirix_maps] Asset zirix_maps/brofx_mansion07.ydr uses 24.0 MiB of virtual memory.
+[resources:zirix_maps] Asset zirix_maps/ch_chint06_dlc_casino_back.ytd uses 21.5 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/designer_house_txd.ytd uses 24.2 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/dp_int_txd.ytd uses 20.0 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/gn_crastenburg.ytd uses 23.2 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/house_2_lks_bedroom_prop.ydr uses 20.4 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/interior_txd.ytd uses 22.0 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/italy_texture.ytd uses 16.7 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/modernhouse1.ytd uses 23.5 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/moutnz_zonah.ytd uses 40.0 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/mz_carpak_shell.ydr uses 25.5 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/mz_pharm.ytd uses 56.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:zirix_maps] Asset zirix_maps/prison_first_txd.ytd uses 28.2 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/prison_main_txd.ytd uses 26.2 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/prison_second_txd.ytd uses 16.8 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/pw-hightimes-shelf-skins.ydr uses 32.0 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/slb2k11_airport_shell.ydr uses 19.5 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/texturetaxi.ytd uses 19.1 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/v_19_stripclub.ytd uses 23.0 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/v_5_1.ytd uses 25.0 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/vesp_01floor_txd.ytd uses 16.2 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/vesp_03floor_txd.ytd uses 17.2 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/vesp_1floor_txd.ytd uses 21.8 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/vesp_2floor_txd.ytd uses 22.9 MiB of physical memory.
+[resources:zirix_maps] Asset zirix_maps/vesp_txd.ytd uses 24.4 MiB of physical memory.
+[           resources] Started resource zirix_maps (26 warnings)
+[ citizen-server-impl] Could not open logotipo.png for reading.
+[ citizen-server-main] Warning: The players.json endpoint has been modified to no longer return the player identifiers without authentication.
+[ citizen-server-main] To learn more about this change read our announcement at https://aka.cfx.re/players-json-privacy
+[      script:oxmysql] Database server connection established!
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://alucard-fagner-lgjp45.users.cfx.re/

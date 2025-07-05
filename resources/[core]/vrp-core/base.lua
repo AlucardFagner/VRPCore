@@ -1,16 +1,4 @@
-local Proxy = module('lib/Proxy')
-local Tunnel = module('lib/Tunnel')
-
-vRP = {}
-vRP.users = {}
-vRP.rusers = {}
-vRP.user_tables = {}
-vRP.user_sources = {}
-Proxy.addInterface('vRP', vRP)
-
-tvRP = {}
-Tunnel.bindInterface('vRP', tvRP)
-vRPclient = Tunnel.getInterface('vRP')
+local VRPCore = exports['vrp-core']:GetCoreObject()
 
 local db_driver
 local showIds = {}
@@ -20,6 +8,9 @@ local cached_queries = {}
 local cached_prepares = {}
 local db_initialized = false
 local requireDiscord = true
+
+local vRP = {}
+local vRP = VRPCore.vRP
 
 function vRP.registerDBDriver(name, on_init, on_prepare, on_query)
 	if not db_drivers[name] then
