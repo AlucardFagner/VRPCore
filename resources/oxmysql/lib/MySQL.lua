@@ -1,187 +1,155 @@
--- This file allows simple conversion from MySQL-Async to Oxmysql
--- Replace any references to '@mysql-async' in your resource manifests to use '@oxmysql' instead
--- Store is used for compatibility only
+local promise = promise
+local Await = Citizen.Await
+local resourceName = GetCurrentResourceName()
+local GetResourceState = GetResourceState
 
-local Ox = exports.oxmysql
-local Store = {}
+local options = {
+	return_callback_errors = false
+}
+
+for i = 1, GetNumResourceMetadata(resourceName, 'mysql_option') do
+	local option = GetResourceMetadata(resourceName, 'mysql_option', i - 1)
+	options[option] = true
+end
+
+local function await(fn, query, parameters)
+	local p = promise.new()
+
+	fn(nil, query, parameters, function(result, error)
+		if error then
+			return p:reject(error)
+		end
+
+		p:resolve(result)
+	end, resourceName, true)
+
+	return Await(p)
+end
+
+local type = type
+local queryStore = {}
 
 local function safeArgs(query, parameters, cb, transaction)
-	if type(query) == 'number' then query = Store[query] end
-	if transaction then
-		assert(type(query) == 'table', ('A table was expected for the transaction, but instead received %s'):format(query))
-	else
-		assert(type(query) == 'string', ('A string was expected for the query, but instead received %s'):format(query))
+	local queryType = type(query)
+
+	if queryType == 'number' then
+		query = queryStore[query]
+		assert(query, "First argument received invalid query store reference")
+	elseif transaction then
+		if queryType ~= 'table' then
+			error(("First argument expected table, received '%s'"):format(query))
+		end
+	elseif queryType ~= 'string' then
+		error(("First argument expected string, received '%s'"):format(query))
 	end
-	if cb then
-		assert(type(cb) == 'function', ('A callback function was expected, but instead received %s'):format(cb))
+
+	if parameters then
+		local paramType = type(parameters)
+
+		if paramType ~= 'table' and paramType ~= 'function' then
+			error(("Second argument expected table or function, received '%s'"):format(parameters))
+		end
+
+		if paramType == 'function' or parameters.__cfx_functionReference then
+			cb = parameters
+			parameters = nil
+		end
 	end
-	local type = parameters and type(parameters)
-	if type and type ~= 'table' and type ~= 'function' then
-		assert(nil, ('A %s was expected, but instead received %s'):format(cb and 'table' or 'function', parameters))
+
+	if cb and parameters then
+		local cbType = type(cb)
+
+		if cbType ~= 'function' and (cbType == 'table' and not cb.__cfx_functionReference) then
+			error(("Third argument expected function, received '%s'"):format(cb))
+		end
 	end
+
 	return query, parameters, cb
 end
 
-MySQL = { Async = {}, Sync = {} }
+local oxmysql = exports.oxmysql
 
----@param query string
----@param parameters? table|function
----@param cb? function
----@return integer result
----returns number of rows updated by the executed query
-MySQL.Async.execute = function(query, parameters, cb)
-	Ox:update(safeArgs(query, parameters, cb))
+local mysql_method_mt = {
+	__call = function(self, query, parameters, cb)
+		query, parameters, cb = safeArgs(query, parameters, cb, self.method == 'transaction')
+		return oxmysql[self.method](nil, query, parameters, cb, resourceName, options.return_callback_errors)
+	end
+}
+
+local MySQL = setmetatable(MySQL or {}, {
+	__index = function(_, index)
+		return function(...)
+			return oxmysql[index](nil, ...)
+		end
+	end
+})
+
+for _, method in pairs({
+	'scalar', 'single', 'query', 'insert', 'update', 'prepare', 'transaction', 'rawExecute',
+}) do
+	MySQL[method] = setmetatable({
+		method = method,
+		await = function(query, parameters)
+			query, parameters = safeArgs(query, parameters, nil, method == 'transaction')
+			return await(oxmysql[method], query, parameters)
+		end
+	}, mysql_method_mt)
 end
 
----@param query string
----@param parameters? table|function
----@param cb? function
----@return table result
----returns array of matching rows or result data
-MySQL.Async.fetchAll = function(query, parameters, cb)
-	Ox:execute(safeArgs(query, parameters, cb))
-end
+local alias = {
+	fetchAll = 'query',
+	fetchScalar = 'scalar',
+	fetchSingle = 'single',
+	insert = 'insert',
+	execute = 'update',
+	transaction = 'transaction',
+	prepare = 'prepare'
+}
 
----@param query string
----@param parameters? table|function
----@param cb? function
----@return integer|string
----returns value of the first column of a single row
-MySQL.Async.fetchScalar = function(query, parameters, cb)
-	Ox:scalar(safeArgs(query, parameters, cb))
-end
+local alias_mt = {
+	__index = function(self, key)
+		if alias[key] then
+			local method = MySQL[alias[key]]
+			MySQL.Async[key] = method
+			MySQL.Sync[key] = method.await
+			alias[key] = nil
+			return self[key]
+		end
+	end
+}
 
----@param query string
----@param parameters? table|function
----@param cb? function
----@return table result
----returns table containing key value pairs
-MySQL.Async.fetchSingle = function(query, parameters, cb)
-	Ox:single(safeArgs(query, parameters, cb))
-end
-
----@param query string
----@param parameters? table|function
----@param cb? function
----@return table result
----returns the last inserted id
-MySQL.Async.insert = function(query, parameters, cb)
-	Ox:insert(safeArgs(query, parameters, cb))
-end
-
----@param queries table
----@param parameters? table|function
----@param cb? function
----@return boolean result
----returns true when the transaction has succeeded
-MySQL.Async.transaction = function(queries, parameters, cb)
-	Ox:transaction(safeArgs(queries, parameters, cb, true))
-end
-
----@param query string
----@param cb? function
----@return integer result
----returns the id used to reference a stored query string
-MySQL.Async.store = function(query, cb)
+local function addStore(query, cb)
 	assert(type(query) == 'string', 'The SQL Query must be a string')
-	local store = #Store+1
-	Store[store] = query
-	cb(store)
+
+	local storeN = #queryStore + 1
+	queryStore[storeN] = query
+
+	return cb and cb(storeN) or storeN
 end
 
----@param query string
----@param parameters? table|function
----@return integer result
----returns number of rows updated by the executed query
-MySQL.Sync.execute = function(query, parameters)
-	query, parameters = safeArgs(query, parameters)
-	local promise = promise.new()
-	Ox:update(query, parameters, function(result)
-		promise:resolve(result)
-	end)
-	return Citizen.Await(promise)
+MySQL.Sync = setmetatable({ store = addStore }, alias_mt)
+MySQL.Async = setmetatable({ store = addStore }, alias_mt)
+
+local function onReady(cb)
+	while GetResourceState('oxmysql') ~= 'started' do
+		Wait(50)
+	end
+
+	oxmysql.awaitConnection()
+
+	return cb and cb() or true
 end
 
----@param query string
----@param parameters? table|function
----@return table result
----returns array of matching rows or result data
-MySQL.Sync.fetchAll = function(query, parameters)
-	query, parameters = safeArgs(query, parameters)
-	local promise = promise.new()
-	Ox:execute(query, parameters, function(result)
-		promise:resolve(result)
-	end)
-	return Citizen.Await(promise)
+MySQL.ready = setmetatable({
+	await = onReady
+}, {
+	__call = function(_, cb)
+		Citizen.CreateThreadNow(function() onReady(cb) end)
+	end,
+})
+
+function MySQL.startTransaction(cb)
+	return oxmysql:startTransaction(cb, resourceName)
 end
 
----@param query string
----@param parameters? table|function
----@return integer|string
----returns value of the first column of a single row
-MySQL.Sync.fetchScalar = function(query, parameters)
-	query, parameters = safeArgs(query, parameters)
-	local promise = promise.new()
-	Ox:scalar(query, parameters, function(result)
-		promise:resolve(result)
-	end)
-	return Citizen.Await(promise)
-end
-
----@param query string
----@param parameters? table|function
----@return table result
----returns table containing key value pairs
-MySQL.Sync.fetchSingle = function(query, parameters)
-	query, parameters = safeArgs(query, parameters)
-	local promise = promise.new()
-	Ox:single(query, parameters, function(result)
-		promise:resolve(result)
-	end)
-	return Citizen.Await(promise)
-end
-
----@param query string
----@param parameters? table|function
----@return table result
----returns the last inserted id
-MySQL.Sync.insert = function(query, parameters)
-	query, parameters = safeArgs(query, parameters)
-	local promise = promise.new()
-	Ox:insert(query, parameters, function(result)
-		promise:resolve(result)
-	end)
-	return Citizen.Await(promise)
-end
-
----@param queries table
----@param parameters? table|function
----@return boolean result
----returns true when the transaction has succeeded
-MySQL.Sync.transaction = function(queries, parameters)
-	queries, parameters = safeArgs(queries, parameters, false, true)
-	local promise = promise.new()
-	Ox:transaction(queries, parameters, function(result)
-		promise:resolve(result)
-	end)
-	return Citizen.Await(promise)
-end
-
----@param query string
----@return integer result
----returns the id used to reference a stored query string
-MySQL.Sync.store = function(query)
-	assert(type(query) == 'string', 'The SQL Query must be a string')
-	local store = #Store+1
-	Store[store] = query
-	return store
-end
-
-MySQL.ready = function(cb)
-	CreateThread(function()
-		repeat
-			Wait(50)
-		until GetResourceState('oxmysql') == 'started'
-		cb()
-	end)
-end
+_ENV.MySQL = MySQL

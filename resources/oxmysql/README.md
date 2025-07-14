@@ -1,41 +1,34 @@
-<h1 align='center'><a href='https://overextended.github.io/oxmysql/'>Documentation</a></h2>
+# oxmysql
 
+A FiveM resource to communicate with a MySQL database using [node-mysql2](https://github.com/sidorares/node-mysql2).
 
-### Introduction
-Oxmysql is an alternative to the unmaintained mysql-async/ghmattimysql resources, utilising [node-mysql2](https://github.com/sidorares/node-mysql2) rather than [mysqljs](https://github.com/mysqljs/mysql).  
+![](https://img.shields.io/github/downloads/overextended/oxmysql/total?logo=github)
+![](https://img.shields.io/github/downloads/overextended/oxmysql/latest/total?logo=github)
+![](https://img.shields.io/github/contributors/overextended/oxmysql?logo=github)
+![](https://img.shields.io/github/v/release/overextended/oxmysql?logo=github) 
 
-There are several incompatibilities in the provided API, meaning we cannot guarantee 100% success when using a "drag-and-drop" mentality. For convenience we have included `@oxmysql/lib/MySQL.lua` to replace mysql-async in your resource manifests.
+## 🔗 Links
+- 💾 [Download](https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip)
+  - Download the latest release directly.
+- 📚 [Documentation](https://overextended.dev/oxmysql)
+  - For installation, setup, and everything else.
+- 📦 [npm](https://www.npmjs.com/package/@overextended/oxmysql)
+  - Use our npm package for enhanced functionality and TypeScript support.
 
-For more information regarding the use of queries, refer to the documentation linked above.
+## ✨ Features
 
-### Features
-- Support for URI connection strings and semicolon separated values
-- Asynchronous queries utilising mysql2/promises connection pool
-- Lua promises in the `wrapper.lua` and `lib/MySQL.lua` files for improved performance when using sync functions
-- Javascript async_retval exports when using recent FX Server builds (requires wrapper.lua to be removed)
-- Support for placeholder values (named and unnamed) to improve query speed and increase security against SQL injection
-- Improved error checking when placeholders and parameters do not match
+- Support for mysql-async and ghmattimysql syntax.
+- Promises / async query handling allowing for non-blocking and awaitable responses.
+- Improved performance and stability compared to other options.
+- Support for named and unnamed placeholders, improving performance and security.
+- Support for URI connection strings and semicolon separated values.
+- Improved parameter checking and error handling.
 
-### Placeholders
-This allows queries to be properly prepared and escaped, as well as improve query times for frequently accessed queries.  
-The following lines are equivalent.
+## 🧾 Logging
 
-```
-"SELECT group FROM users WHERE identifier = ?", {identifier}  
-"SELECT group FROM users WHERE identifier = :identifier", {identifier = identifier}  
-"SELECT group FROM users WHERE identifier = @identifier", {['@identifier'] = identifier}
-```  
+We have included a module for submitting error logs to [Fivemanage](https://fivemanage.com/?ref=overextended), a cloud management service tailored for game servers. Additional logging options and support for other services will be available in the future.
 
-You can also use the following syntax when you are uncertain about the column to select.
+## Lua Language Server
 
-```
-"SELECT ?? FROM users WHERE identifier = ?", {column, identifier}  
-instead of using  
-"SELECT "..column.." FROM users WHERE identifier = ?", {identifier}
-```  
-
-
-<br><br><br><br><br>
-<hr>
-<p align='center'><a href='https://discord.io/overextended'>Discord</a></p>
-<hr>
+- Install [Lua Language Server](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) to ease development with annotations, type checking, diagnostics, and more.
+- See [ox_types](https://github.com/overextended/ox_types) for our Lua type definitions.

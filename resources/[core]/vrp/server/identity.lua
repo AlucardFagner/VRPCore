@@ -3,10 +3,16 @@ function vRP.getUserIdentity(user_id)
 	return rows[1]
 end
 
+-- function vRP.getUserRegistration(user_id)
+-- 	local rows = vRP.getUserId(user_id)
+-- 	return rows[1].registration
+-- end
+
 function vRP.getUserRegistration(user_id)
-	local rows = vRP.getUser(user_id)
-	return rows[1].registration
+    local identity = vRP.userIdentity(user_id)
+    return identity and identity.registration or "desconhecido"
 end
+
 
 function vRP.getUserIdRegistration(registration)
 	local rows = vRP.query('vRP/get_registration', { registration = registration })

@@ -1,6 +1,9 @@
 ================================================================
-======== txAdmin v8.0.1 atop fxserver 13890 Starting - 04/07/2025 20:33:58
+======== txAdmin v8.0.1 atop fxserver 13890 Starting - 14/07/2025 18:28:55
 ================================================================
-[20:34:36][Alucard_Fagner] created admins file
-[20:35:04][Alucard_Fagner] Config changes: server.dataPath
-[20:35:04][Alucard_Fagner] Changing global/fxserver settings via setup stepper.
+================================================================
+======== Log Rotated - 14/07/2025 18:28:58                      
+================================================================
+[18:35:28][Alucard_Fagner] logged in from 127.0.0.1 via cfxre
+[18:35:30][Alucard_Fagner] [Alucard_Fagner] executed "RESTART SERVER"
+[18:41:34][Alucard_Fagner] [Alucard_Fagner] executed "RESTART SERVER"

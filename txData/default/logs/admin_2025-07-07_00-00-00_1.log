@@ -1,0 +1,15 @@
+================================================================
+======== txAdmin v8.0.1 atop fxserver 13890 Starting - 07/07/2025 18:51:21
+================================================================
+================================================================
+======== Log Rotated - 07/07/2025 18:51:24                      
+================================================================
+[18:51:58][Alucard_Fagner] logged in from 127.0.0.1 via cfxre
+================================================================
+======== txAdmin v8.0.1 atop fxserver 13890 Starting - 07/07/2025 18:56:47
+================================================================
+[18:57:55][Alucard_Fagner] logged in from 127.0.0.1 via cfxre
+[18:59:17][Alucard_Fagner] [Alucard_Fagner] executed "RESTART SERVER"
+[19:00:22][Alucard_Fagner] [Alucard_Fagner] executed "RESTART SERVER"
+[19:01:29][Alucard_Fagner] [Alucard_Fagner] executed "RESTART SERVER"
+[19:02:50][Alucard_Fagner] [Alucard_Fagner] executed "STOP SERVER"

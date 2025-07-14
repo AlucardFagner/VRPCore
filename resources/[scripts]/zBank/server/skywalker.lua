@@ -193,7 +193,8 @@ function zSERVER.create_account(username, password)
         TriggerClientEvent('Notify', source, 'negado', 'Esse usuário já está em uso.', 10000)
         TriggerClientEvent('zBank:close', source)
     else
-        vRP.execute('vRP/create_bank_acount', {['user_id'] = user_id, ['balance'] = config.initial_money, ['username'] = username, ['password'] = password })
+        print("entrei aqui")
+        vRP.execute('vRP/create_bank_acount', {user_id = user_id, balance = config.initial_money, username = username, password = password })
         Wait(100)
         TriggerClientEvent('zBank:open', source)
     end    

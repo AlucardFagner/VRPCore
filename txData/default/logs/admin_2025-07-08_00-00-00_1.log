@@ -1,0 +1,22 @@
+================================================================
+======== txAdmin v8.0.1 atop fxserver 13890 Starting - 08/07/2025 00:00:36
+================================================================
+================================================================
+======== Log Rotated - 08/07/2025 00:00:42                      
+================================================================
+[00:02:17][Alucard_Fagner] logged in from 127.0.0.1 via cfxre
+[00:14:39][Alucard_Fagner] Refreshed resources
+[00:14:41][Alucard_Fagner] Stopped resource "oxmysql"
+[00:14:42][Alucard_Fagner] Refreshed resources
+[00:14:43][Alucard_Fagner] Ensured resource "oxmysql"
+[00:15:30][Alucard_Fagner] Ensured resource "zBank"
+[00:16:08][Alucard_Fagner] Ensured resource "zBank"
+[00:19:15][Alucard_Fagner] Ensured resource "zBank"
+[00:19:31][Alucard_Fagner] [Alucard_Fagner] executed "RESTART SERVER"
+[00:28:35][Alucard_Fagner] Ensured resource "vrp"
+[00:28:41][Alucard_Fagner] Refreshed resources
+[00:30:26][Alucard_Fagner] [Alucard_Fagner] executed "RESTART SERVER"
+[00:34:29][Alucard_Fagner] [Alucard_Fagner] executed "RESTART SERVER"
+[00:40:14][Alucard_Fagner] [Alucard_Fagner] executed "RESTART SERVER"
+[00:45:30][Alucard_Fagner] [Alucard_Fagner] executed "RESTART SERVER"
+[00:45:48][Alucard_Fagner] [Alucard_Fagner] executed "STOP SERVER"
